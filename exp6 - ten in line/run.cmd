@@ -1,0 +1,2 @@
+tesseract teninline.png teninline 
+

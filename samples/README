@@ -1,0 +1,9 @@
+pot????.png     - sample files
+1.png,... 6.png - intermediate parts of total.png
+1.png,... 6.png - intermediate parts of total.png converted to png
+total.png       - sample files glued up together
+total0.png      - total.png scaled by factor 2
+total00.png     - total.png resized by factor 2 (smooth)
+total.txt       - total.png processed by tesseract
+total0.txt      - total0.png processed by tesseract
+total00.txt     - total00.png processed by tesseract

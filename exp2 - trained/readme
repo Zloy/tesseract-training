@@ -1,0 +1,65 @@
+Training tesseract here
+
+This mini-howto is based on http://code.google.com/p/tesseract-ocr/wiki/TrainingTesseract3
+
+run to montage multiple png files into big single one
+montage_all.cmd
+
+Run the following command for each *.png file
+> tesseract total.png total batch.nochop makebox
+
+It'll create the corresponding ./total.box file total.box. That box file contains something like that (without the first line):
+<symbol, left, bottom, right, top, 0>
+6 31 2 38 12 0
+1 41 2 46 12 0
+8 47 2 54 12 0
+s 59 2 66 12 0
+o 67 2 74 12 0
+
+Note that the coordinate system used in the box file has (0,0) at the bottom-left. 
+The last number on each line is the page number (0-based) of that character in the multi-page.png file. 
+
+Edit these files with jTessBoxEditor to replace wrong characters with the right ones, and to add missed ones.
+6 31 2 38 12 0
+1 41 2 46 12 0
+8 47 2 54 12 0
+. 56 2 57 4 0
+8 59 2 66 12 0
+0 67 2 74 12 0
+
+Run unicharset_extractor with total.box files passed to it
+> unicharset_extractor total.box
+
+It'll create ./unicharset file with all characters defined in total.box file
+
+Put 'total 0 0 0 0 0' in the file ./font_properties (with no quotes)
+
+>tesseract total.png total nobatch box.train
+
+>mftraining -F font_properties -U unicharset total.tr
+
+>cntraining -F font_properties -U unicharset total.tr
+
+#wordlist2dawg number number-dawg unicharset
+wordlist2dawg punc punc-dawg unicharset
+#wordlist2dawg frequent_words_list freq-dawg unicharset
+#wordlist2dawg words_list word-dawg unicharset
+
+rename all corresponding files to:
+    * ttn.config
+    * ttn.unicharset
+    * ttn.unicharambigs
+    * ttn.inttemp
+    * ttn.pffmtable
+    * ttn.normproto
+    * ttn.punc-dawg
+    * ttn.word-dawg
+    * ttn.number-dawg
+    * ttn.freq-dawg 
+
+>combine_tessdata ttn.
+
+copy all these files including ttn.traineddata to TESSERACT_BASE/tessdata
+
+now you can do that:
+tesseract total.png total.txt -l ttn
