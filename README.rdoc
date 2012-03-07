@@ -7,7 +7,7 @@
 
 == DESCRIPTION
 
-This repo contains all necessary bits to try to OCR number images grabbed from a screen (like that http://github.com/Zloy/tesseract-training/raw/master/samples/pot0007.png)
+This repo contains all necessary bits to OCR number images grabbed from the screen (like that http://github.com/Zloy/tesseract-training/raw/master/samples/pot0007.png)
 
 If you got a bunch of number images and wish to convert them into plain text that is what you need
 
@@ -35,7 +35,7 @@ http://github.com/Zloy/tesseract-training/raw/master/total.png
 
 <tt>cd exp1 - as is</tt>
 
-That folder contais <b>run.cmd</b> which ocrs total.png. The result text is in total.txt. You can see errors:
+That folder contais <b>run.cmd</b> which ocrs total.png. The result text is in total.txt. You can see the errors:
 
 http://github.com/Zloy/tesseract-training/raw/master/images/02a.gif
 
@@ -48,7 +48,9 @@ Tesseract recognizes 6 and 8 as 5 and misses decimal dot .
 
 That folder contais <b>train.cmd</b> which automatically trains tesseract for such images. See it and read userguide[http://code.google.com/p/tesseract-ocr/wiki/TrainingTesseract3] to learn how to train tesseract. 
 
-Launch run.cmd to ocr total.png with trained tesseract. The result text is in total.txt. You can see errors:
+To train tesseract automatically just launch <b>train.cmd</b>
+
+Launch run.cmd to ocr total.png with trained tesseract. The result text is in total.txt. You can see the errors:
 
 http://github.com/Zloy/tesseract-training/raw/master/images/03a.gif
 
@@ -60,9 +62,9 @@ You can see that tesseract learned how to distinct 6 and 8 from 5, but still mis
 As soon as thare are errors try to scale total.png. To do that <tt>cd exp3 - scaled</tt>
 
 It contains <b>total-scaled.png</b> the fragment of which you can see below:
-http://github.com/Zloy/tesseract-training/raw/images/scaled-part.png
+http://github.com/Zloy/tesseract-training/raw/master/images/scaled-part.png
 
-To ocr total-scaled launch run.cmd. The result text is in total.txt. You can see errors:
+To ocr total-scaled launch run.cmd. The result text is in total.txt. You can see the errors:
 
 http://github.com/Zloy/tesseract-training/raw/master/images/04a.gif
 
@@ -75,7 +77,7 @@ You can scale total.png different way: <tt>cd exp4 - resized</tt>. It contains <
 
 http://github.com/Zloy/tesseract-training/raw/master/images/resized-part.png
 
-To ocr total-resized launch run.cmd. The result text is in total.txt. You can see errors:
+To ocr total-resized launch run.cmd. The result text is in total.txt. You can see the errors:
 
 http://github.com/Zloy/tesseract-training/raw/master/images/05a.gif
 
@@ -88,7 +90,7 @@ What will happen if you wish ocr number images on by one?
 
 It contains 10 sample images and corresponding txt files which are the results of recognition
 
-To ocr them launch run.cmd. See text files to find errors. Some 2 and 3 digit numbers are not recognized at all.
+To ocr them launch run.cmd. See text files to find errors. Some 2 and 3 digit numbers are not recognized at all!
 
 
 ==== exp6 - ten in line
@@ -104,9 +106,5 @@ To ocr it launch run.cmd. See text file - it contains no errors!
 
 == ON LINUX
 
-It takes little efforts to port all those one line cmd scripts to bash ones.
+It takes little efforts to port all those <b>cmd</b> oneliners to bash ones. Write them, test them and submit pull request if you wish to contribute.
 
-
-== LICENSE
-
-Free
