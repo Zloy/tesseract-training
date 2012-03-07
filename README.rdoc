@@ -62,6 +62,7 @@ You can see that tesseract learned how to distinct 6 and 8 from 5, but still mis
 As soon as thare are errors try to scale total.png. To do that <tt>cd exp3 - scaled</tt>
 
 It contains <b>total-scaled.png</b> the fragment of which you can see below:
+
 http://github.com/Zloy/tesseract-training/raw/master/images/scaled-part.png
 
 To ocr total-scaled launch run.cmd. The result text is in total.txt. You can see the errors:
