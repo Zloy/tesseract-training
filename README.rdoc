@@ -1,4 +1,4 @@
-= Numbers from screenshots with Tesseract OCR sandbox http://github.com/Zloy/tesseract-training/raw/master/samples/pot0007.png
+= Numbers from screenshots with Tesseract OCR sandbox 
 
 * http://github.com/Zloy/tesseract-training
 * http://habrahabr.ru/blogs/sandbox/138401/ 
@@ -7,7 +7,7 @@
 
 == DESCRIPTION
 
-This repo contains all necessary bits to try to OCR number images grabbed from a screen
+This repo contains all necessary bits to try to OCR number images grabbed from a screen (like that http://github.com/Zloy/tesseract-training/raw/master/samples/pot0007.png)
 
 If you got a bunch of number images and wish to convert them into plain text that is what you need
 
@@ -27,6 +27,7 @@ So, you got subfolders:
 ==== Samples
 
 It is full of sample number images. It is convenient to OCR them all together. That is why I created <b>total.png</b> file:
+
 http://github.com/Zloy/tesseract-training/raw/master/total.png
 
 
@@ -34,9 +35,8 @@ http://github.com/Zloy/tesseract-training/raw/master/total.png
 
 <tt>cd exp1 - as is</tt>
 
-That folder contais <b>run.cmd</b> which ocrs total.png.
+That folder contais <b>run.cmd</b> which ocrs total.png. The result text is in total.txt. You can see errors:
 
-The result text is in total.txt. You can see errors:
 http://github.com/Zloy/tesseract-training/raw/master/images/02a.gif
 
 Tesseract recognizes 6 and 8 as 5 and misses decimal dot .
@@ -48,9 +48,8 @@ Tesseract recognizes 6 and 8 as 5 and misses decimal dot .
 
 That folder contais <b>train.cmd</b> which automatically trains tesseract for such images. See it and read userguide[http://code.google.com/p/tesseract-ocr/wiki/TrainingTesseract3] to learn how to train tesseract. 
 
-Launch run.cmd to ocr total.png with trained tesseract.
+Launch run.cmd to ocr total.png with trained tesseract. The result text is in total.txt. You can see errors:
 
-The result text is in total.txt. You can see errors:
 http://github.com/Zloy/tesseract-training/raw/master/images/03a.gif
 
 You can see that tesseract learned how to distinct 6 and 8 from 5, but still misses decimal dots .
@@ -60,28 +59,25 @@ You can see that tesseract learned how to distinct 6 and 8 from 5, but still mis
 
 As soon as thare are errors try to scale total.png. To do that <tt>cd exp3 - scaled</tt>
 
-It contains <b>total-scaled.png</b> the fragment of which you can see below
+It contains <b>total-scaled.png</b> the fragment of which you can see below:
 http://github.com/Zloy/tesseract-training/raw/images/scaled-part.png
 
-To ocr total-scaled launch run.cmd
+To ocr total-scaled launch run.cmd. The result text is in total.txt. You can see errors:
 
-The result text is in total.txt. You can see errors:
-img:blob/master/images/04a.gif
+http://github.com/Zloy/tesseract-training/raw/master/images/04a.gif
 
 It mixes 7 with 2 and adds 3 redundant spaces between digits
 
 
 ==== exp4 - resized
 
-You can scale total.png different way: <tt>cd exp4 - resized</tt>
+You can scale total.png different way: <tt>cd exp4 - resized</tt>. It contains <b>total-resized.png</b> the fragment of which you can see below:
 
-It contains <b>total-resized.png</b> the fragment of which you can see below
 http://github.com/Zloy/tesseract-training/raw/master/images/resized-part.png
 
-To ocr total-resized launch run.cmd
+To ocr total-resized launch run.cmd. The result text is in total.txt. You can see errors:
 
-The result text is in total.txt. You can see errors:
-img[http://github.com/Zloy/tesseract-training/raw/master/images/05a.gif]
+http://github.com/Zloy/tesseract-training/raw/master/images/05a.gif
 
 
 ==== exp5 - one by one
@@ -92,9 +88,7 @@ What will happen if you wish ocr number images on by one?
 
 It contains 10 sample images and corresponding txt files which are the results of recognition
 
-To ocr them launch run.cmd
-
-See text files to find errors. Some 2 and 3 digit numbers are not recognized at all.
+To ocr them launch run.cmd. See text files to find errors. Some 2 and 3 digit numbers are not recognized at all.
 
 
 ==== exp6 - ten in line
@@ -105,9 +99,7 @@ What will happen if you wish to ocr 10 images all together?
 
 It contains <b>teninline.png</b> and corresponding txt file with the result of recognition
 
-To ocr it launch run.cmd
-
-See text file - it contains no errors!
+To ocr it launch run.cmd. See text file - it contains no errors!
 
 
 == ON LINUX
