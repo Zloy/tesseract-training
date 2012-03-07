@@ -1,7 +1,7 @@
 = Numbers from screenshots with Tesseract OCR sandbox 
 
 * http://github.com/Zloy/tesseract-training
-* http://habrahabr.ru/blogs/sandbox/138401/ 
+* http://habrahabr.ru/blogs/image_processing/138401 
 
 
 
